@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class="center-body">
+    <nav th:replace="fragments/layout :: navbar"></nav>
+    <h1>List of tags</h1>
+
+    <div id="tag-list">
+        <div th:each="tag : ${tags}" class="card tag">
+            <p th:text="${tag.title}"></p>
+        </div>
+    </div>
+    <h3><a href="/tag/add" >Add a tag</a></h3>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<nav th:fragment="navbar">
+    <a th:href="@{/questions}"><img src="/images/home.svg" class="home"></a>
+    <div class="menu">
+        <img src="/images/hamburger_menu.svg">
+        <div class="actions">
+            <a th:href="@{/questions/add}">Add question</a>
+            <a th:href="@{/questions/remove}">Remove questions</a>
+            <a th:href="@{/tag}">Tags</a>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>

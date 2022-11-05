@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class="center-body">
+    <nav th:replace="fragments/layout :: navbar"></nav>
+    <section class="question-content card">
+        <div>
+            <h2 th:text="${question.title}"></h2>
+            <p th:utext="${question.description}"></p>
+        </div>
+        <div class="taglist">
+            <span th:each="tag : ${tags}" th:text="${tag.title}" class="card"></span>
+        </div>
+    </section>
+    <section class="add-answer">
+        <form action="#" th:action="@{/answers/{questionid}/add(questionid = ${question.id})}"
+              th:object="${answer}" method="post">
+            <h3>Your answer</h3>
+            <textarea th:field="*{content}" placeholder="content" rows="15"/>
+            <input type="submit" value="Submit" />
+        </form>
+    </section>
+
+    <section class="question-answer-list">
+        <h3 th:if="${answers.empty}">
+            No answers
+        </h3>
+        <div >
+            <h2>Answers</h2>
+            <div th:each="a : ${answers}" class="question-answer card">
+                <p th:utext="${a.content}"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

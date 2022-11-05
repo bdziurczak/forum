@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <main class="question-main">
+        <h1>Questions</h1>
+        <nav th:replace="fragments/layout :: navbar"></nav>
+        <div th:replace="fragments/question_list :: question_list"></div>
+    </main>
+</body>
+</html>

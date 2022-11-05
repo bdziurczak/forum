@@ -1,0 +1,263 @@
+body {
+    background-color: whitesmoke;
+    box-sizing: border-box !important;
+}
+
+#searchform {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#searchform > input[type=text] {
+    width: 50%;
+    height: 3vh;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black !important;
+    font-size: 2vh;
+}
+
+#searchform > * {
+    font-size: 2vh;
+}
+
+
+.question-main {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 700px) {
+    #searchform {
+        flex-direction: row;
+        width: 700px;
+    }
+
+    .question-main {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    #searchform {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .question-main {
+        width: 100% !important;
+    }  
+}
+
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.questions-list .question {
+    display: block;
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.questions-list .question a {
+    color: black;
+    text-decoration: none;
+    height: 100%;
+}
+
+.questions-list .question p:first-child {
+    font-weight: bolder !important;
+    margin: 0;
+    padding-top: 1em;
+    padding-left: 1vw;
+    height: 50%;
+}
+
+.questions-list .question p:last-child {
+    font-style: italic !important;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1vw;
+    height: 50%;
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.menu:hover .actions {
+    visibility: visible;
+}
+
+.menu img {
+    width: 2rem;
+    height: 2rem;
+
+}
+
+.menu  .actions {
+    position: absolute;
+    visibility: hidden;
+    font-size: 1.25em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    right: 1px;
+}
+.home {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+.menu  .actions  a {
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.menu  .actions  a:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.remove .question:hover {
+    background-color: red;
+}
+
+.question-content {
+    width: 80%;
+    margin-top: 1.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+.question-content .taglist {
+    font-weight: bolder;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1em;
+    width: 50%;
+    height: 60%;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-bottom: 1vw;
+}
+
+.question-content .taglist * {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+    min-width: 15%;
+    color: white;
+    background-color: #2b2829;
+    border: 1px solid #2b2829;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+.question-answer {
+    margin: 1vh;
+    padding: 1vh;
+    min-height: 100px;
+    width: 100%;
+}
+section {
+    margin-top: 1vh;
+}
+
+.card {
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.center-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    width: 50%;
+    margin-top: 2vh;
+}
+
+.add-answer form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-answer form input[type="submit"] {
+    margin-top: 1vh;
+}
+.add-answer textarea {
+    width: 80%;
+    height: 100%;
+}
+
+.question-answer-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.question-answer-list h2 {
+    text-align: center;
+}
+
+h3 a{
+    text-decoration: none;
+}
+
+.tag {
+    width: 10vw;
+    margin-left: 1vw;
+    padding: 0.1vw;
+    margin-top: 0.5vw;
+}
+#tag-list {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+
+

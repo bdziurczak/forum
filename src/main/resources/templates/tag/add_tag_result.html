@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+</head>
+<body class="center-body">
+<h1>Tag was added!</h1>
+<p th:text="'id: ' + ${tag.id}" />
+<h2>Title</h2>
+<p th:text="${tag.title}" />
+<a href="/tag/add">Submit another tag</a>
+<a href="/tag">List of tags</a>
+</body>
+</html>

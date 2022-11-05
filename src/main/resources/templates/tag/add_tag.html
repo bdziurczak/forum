@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add tag</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body class="center-body">
+  <nav th:replace="fragments/layout :: navbar"></nav>
+  <h1>Add a tag</h1>
+    <form action="#" th:action="@{/tag/add}" th:object="${tag}" method="post">
+      <input type="text" th:field="*{title}" placeholder="Title"/>
+      <input type="submit" value="Submit" />
+    </form>
+  <a href="/tag">Show all tags</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Question</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <main class="question-main" >
+        <nav th:replace="fragments/layout :: navbar"></nav>
+        <h1>Remove question:</h1>
+        <div class="questions-list remove">
+            <div th:if="${questions.empty}">
+                <h1>No questions</h1>
+            </div>
+            <div th:each="q : ${questions}" class="question">
+                <a th:href="@{/questions/remove/{id}(id = ${q.id})}">
+                    <p><span th:text="${q.title} "></span></p>
+
+                    <p th:if="${#strings.length(q.description) <= 30}">
+                        <span th:text="${q.description}"></span>
+                    </p>
+
+                    <p th:unless="${#strings.length(q.description) <= 30}">
+                        <span th:text="${#strings.substring(q.description, 0, 30)} + '...'"></span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

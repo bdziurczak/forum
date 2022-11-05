@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Add question</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class="center-body">
+    <nav th:replace="fragments/layout :: navbar"></nav>
+    <h1>Add a question</h1>
+    <form action="#" th:action="@{/questions/add}" method="post">
+        <input type="text" th:field="${question.title}" placeholder="Title"/>
+        <textarea th:field="${question.description}" placeholder="description" rows="10" cols="40"/>
+        <table>
+            <tr th:each="item, iter : ${tags}">
+                <td><input type="checkbox" th:field="${question.tags[__${iter.index}__]}" th:value="${item.id}"></td>
+                <td><label th:text="${item.title}" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+    <a href="/questions">Return to main page</a>
+</body>
+</html>

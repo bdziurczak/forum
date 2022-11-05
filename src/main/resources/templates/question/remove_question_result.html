@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Result</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class="center-body">
+    <nav th:replace="fragments/layout :: navbar"></nav>
+    <h1>Question was removed!</h1>
+    <p th:text="'id: ' + ${question.id}" />
+    <h2>Title</h2>
+    <p th:text="${question.title}" />
+    <h2>Description</h2>
+    <p th:utext="${question.description}" />
+    <a href="/questions/remove">remove another question</a>
+    <a href="/questions">Return to main page</a>
+</body>
+</html>
+</body>
+</html>

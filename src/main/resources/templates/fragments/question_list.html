@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+  <div th:fragment="question_list" class="questions-list">
+    <div th:if="${questions.empty}">
+      <h1>No questions</h1>
+    </div>
+    <div th:each="q : ${questions}" class="question">
+      <a th:href="@{/questions/details/{id}(id = ${q.id})}">
+        <p><span th:text="${q.title} "></span></p>
+
+        <p th:if="${#strings.length(q.description) <= 30}">
+          <span th:text="${q.description}"></span>
+        </p>
+
+        <p th:unless="${#strings.length(q.description) <= 30}">
+          <span th:text="${#strings.substring(q.description, 0, 30)} + '...'"></span>
+        </p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
