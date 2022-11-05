@@ -84,8 +84,4 @@ public class QuestionController {
         return "question/details";
     }
 
-    //@GetMapping("/search")
-    /*public ModelAndView searchQuestion() {
-
-    }*/
 }
